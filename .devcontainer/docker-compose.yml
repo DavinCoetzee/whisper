@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  whisper-pytorch:
+    image: whisper-torch:base
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    networks:
+      - myNetwork
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+networks:
+  myNetwork:
+    driver: bridge

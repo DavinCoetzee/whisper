@@ -1,0 +1,35 @@
+{
+    "name": "whisper-gpu",
+    "dockerComposeFile": "docker-compose.yml",
+    "workspaceFolder": "/workspace",
+    "service": "whisper-pytorch",
+    "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "njpwerner.autodocstring",
+    "streetsidesoftware.code-spell-checker"
+    ],
+    "runArgs": [ "--gpus", "all"],
+    "remoteUser": "root",
+    "settings": {
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "black",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.languageServer": "Pylance",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pycodestyleEnabled": true,
+        "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
+        "python.formatting.blackPath": "/opt/venv/bin/black",
+        "python.formatting.yapfPath": "/usr/local/bin/yapf",
+        "python.linting.banditPath": "/usr/local/bin/bandit",
+        "python.linting.flake8Path": "/usr/local/bin/flake8",
+        "python.linting.mypyPath": "/usr/local/bin/mypy",
+        "python.linting.pycodestylePath": "/usr/local/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/usr/local/bin/pydocstyle",
+        "python.linting.pylintPath": "/usr/local/bin/pylint",
+        "python.linting.pycodestyleArgs": [
+        "--ignore=E501"
+        ]   
+        }
+}
